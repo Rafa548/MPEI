@@ -1,0 +1,60 @@
+%a)
+
+T= [0.8,0.2,0,0,0;
+    0,0.6,0.3,0.1,0;
+    0,0,1,0,0;
+    0.3,0.2,0,0.4,0.1;
+    0,0,0,0,1;
+    ]';
+
+sum(T);
+
+%b)
+
+x = [1,0,0,0,0]';
+res = zeros(1,5);
+all = zeros(1,100);
+for h = 1:1:100
+    res = (T^h) * x;
+    all(h) = res(2);
+end
+
+r = 1:1:100;
+%plot(r,all)
+
+%c
+
+res_2 = zeros(1,5);
+all_3 = zeros(1,100);
+all_5 = zeros(1,100);
+for l = 1:1:100
+    res = (T^l) * x;
+    all_3(h) = res(3);
+    all_5(h) = res(5);
+end
+%plot(r,all_3,r,all_5)
+
+
+%d
+Tcan = zeros(5);
+Tcan(1,1)=0.8; Tcan(2,1)=0.2;
+Tcan(2,2)=0.6; Tcan(3,2)=0.1;
+Tcan(1,3)=0.3; Tcan(2,3)=0.2; Tcan(3,3)=0.4; Tcan(4,2)=0.3;
+Tcan(4,4)=1;
+Tcan(5,5)=1;
+
+Q=Tcan(1:3,1:3);
+
+%e
+
+F = (eye(3)-(Q))^-1;
+
+%f
+
+abs_1
+abs_3
+abs_5
+
+
+
+
